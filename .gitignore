@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment directories
+env/
+venv/
+.venv/
+env.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS-specific files
+.DS_Store
+
+# Log files
+*.log
+logs/
+
+# Environment and configuration files
+.env
+*.env
+
+# Ignore package distributions
+dist/
+build/
+*.egg-info/
+
+# Ignore Docker and Git files
+docker-compose.override.yml
+docker-compose.yml
+docker-compose.prod.yml
+*.pid
+
+# Ignore system files
+Thumbs.db
+
+# Ignore IDE and editor config files
+.vscode/
+.idea/
+*.swp
+
+# Ignore Pytest cache
+.pytest_cache/
+
+# Ignore coverage reports
+htmlcov/
+.tox/
+.coverage
+*.cover
+*.coverage.*
+.cache
+
+# Ignore Git and version control directories
+.git
+
+# Ignode models
+*.onnx
+*.om
+*.bmodel
+
+# 测试数据文件
+.data/
+
+*.jpeg
+*.png
+*.jpg
+*.mp4
