@@ -1,0 +1,39 @@
+name: "phi-4"
+license: mit
+tags:
+  - llm
+  - gguf
+  - phi
+  - cpu
+  - gpu
+  - text-generation
+urls:
+  - https://hf-mirror.com/microsoft/phi-4
+  - https://hf-mirror.com/bartowski/phi-4-GGUF
+description: |
+  phi-4 is a state-of-the-art open model built upon a blend of synthetic datasets, data from filtered public domain websites, and acquired academic books and Q&A datasets. The goal of this approach was to ensure that small capable models were trained with data focused on high quality and advanced reasoning.
+  phi-4 underwent a rigorous enhancement and alignment process, incorporating both supervised fine-tuning and direct preference optimization to ensure precise instruction adherence and robust safety measures. Phi-4 is a 14B parameters, dense decoder-only Transformer model.
+overrides:
+  parameters:
+    model: phi-4-Q4_K_M.gguf
+files:
+  - filename: phi-4-Q4_K_M.gguf
+    uri: http://hf-mirror.com/bartowski/phi-4-GGUF/phi-4-Q4_K_M.gguf
+    sha256: 009aba717c09d4a35890c7d35eb59d54e1dba884c7c526e7197d9c13ab5911d9
+config_file: |
+  mmap: true
+  template:
+    chat_message: |
+      <|im_start|>{{ .RoleName }}<|im_sep|>
+      {{.Content}}<|im_end|>
+    chat: |
+      {{.Input}}
+      <|im_start|>assistant<|im_sep|>
+    completion: |
+      {{.Input}}
+  context_size: 4096
+  f16: true
+  stopwords:
+  - <|end|>
+  - <|endoftext|>
+  - <|im_end|>
